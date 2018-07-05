@@ -8,9 +8,22 @@ import {ChatService} from "./chat.service";
 })
 export class ChatComponent implements OnInit {
 
+  public notifications = 0;
+
   constructor(private chatService: ChatService) { }
 
   ngOnInit() {
+    let stompClient = this.chatService.connect();
+
+    stompClient.connect({}, frame => {
+
+      stompClient.subscribe('/topic/notification', notifications => {
+
+        this.notifications = JSON.parse(notifications.body).count;
+
+      })
+
+    });
   }
 
 }
