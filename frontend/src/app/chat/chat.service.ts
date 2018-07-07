@@ -11,7 +11,7 @@ export class ChatService {
   constructor() { }
 
   connect() {
-    let socket = new SockJS(`http://localhost:8080/socket`);
+    let socket = new SockJS('http://localhost:8080/socket');
 
     let stompClient = Stomp.over(socket);
 

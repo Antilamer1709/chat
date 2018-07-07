@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ChatService} from "./chat.service";
+import $ from 'jquery';
 
 @Component({
   selector: 'app-chat',
@@ -8,22 +9,31 @@ import {ChatService} from "./chat.service";
 })
 export class ChatComponent implements OnInit {
 
-  public notifications = 0;
+  title = 'WebSockets chat';
+  private stompClient;
 
   constructor(private chatService: ChatService) { }
 
   ngOnInit() {
-    let stompClient = this.chatService.connect();
+    this.initializeWebSocketConnection();
+  }
 
-    stompClient.connect({}, frame => {
+  private initializeWebSocketConnection(){
+    this.stompClient = this.chatService.connect();
 
-      stompClient.subscribe('/topic/notification', notifications => {
-
-        this.notifications = JSON.parse(notifications.body).count;
-
+    this.stompClient.connect({}, frame => {
+      this.stompClient.subscribe('/chat', message => {
+        if(message.body) {
+          $(".chat").append("<div class='message'>"+message.body+"</div>")
+          console.log(message.body);
+        }
       })
-
     });
+  }
+
+  sendMessage(message){
+    this.stompClient.send("/app/send/message" , {}, message);
+    $('#input').val('');
   }
 
 }
