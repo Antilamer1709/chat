@@ -19,4 +19,8 @@ public class Notifications {
     public void increment() {
         this.count++;
     }
+
+    public void decrement() {
+        this.count--;
+    }
 }
