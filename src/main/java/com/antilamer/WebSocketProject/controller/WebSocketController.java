@@ -1,12 +1,11 @@
 package com.antilamer.WebSocketProject.controller;
 
+import com.antilamer.WebSocketProject.model.ChatMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.simp.SimpMessageHeaderAccessor;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 @Controller
 public class WebSocketController {
@@ -19,8 +18,9 @@ public class WebSocketController {
     }
 
     @MessageMapping("/send/message")
-    public void onReceivedMesage(String message){
-        this.template.convertAndSend("/chat",  new SimpleDateFormat("HH:mm:ss").format(new Date())+"- "+message);
+    public void onReceivedMesage(SimpMessageHeaderAccessor headerAccessor, String message){
+        ChatMessageDTO messageDTO = new ChatMessageDTO(headerAccessor.getUser(), message);
+        this.template.convertAndSend("/chat",  messageDTO.toString());
     }
 
 }

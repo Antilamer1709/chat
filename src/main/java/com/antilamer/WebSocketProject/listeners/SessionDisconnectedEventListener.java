@@ -16,14 +16,10 @@ public class SessionDisconnectedEventListener implements ApplicationListener<Ses
     @Autowired
     private SimpMessagingTemplate template;
 
-    @Autowired
-    private UserService userService;
-
     @Override
     public void onApplicationEvent(SessionDisconnectEvent sessionDisconnectEvent) {
         StompHeaderAccessor headerAccessor = StompHeaderAccessor.wrap(sessionDisconnectEvent.getMessage());
-        userService.decrement();
-        template.convertAndSend("/chat", userService.getNotifications());
+//        template.convertAndSend("/chat", userService.getNotifications());
         log.debug(headerAccessor.toString());
     }
 
