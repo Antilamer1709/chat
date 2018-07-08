@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ChatService} from "./chat.service";
-import $ from 'jquery';
 
 @Component({
   selector: 'app-chat',
@@ -9,7 +8,8 @@ import $ from 'jquery';
 })
 export class ChatComponent implements OnInit {
 
-  title = 'WebSockets chat';
+  public messages: string[] = [];
+  public messageContent: string;
   private stompClient;
 
   constructor(private chatService: ChatService) { }
@@ -24,7 +24,7 @@ export class ChatComponent implements OnInit {
     this.stompClient.connect({}, frame => {
       this.stompClient.subscribe('/chat', message => {
         if(message.body) {
-          $(".chat").append("<div class='message'>"+message.body+"</div>")
+          this.messages.push(message.body);
           console.log(message.body);
         }
       })
@@ -32,8 +32,12 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage(message){
+    if (!message) {
+      return;
+    }
+
     this.stompClient.send("/app/send/message" , {}, message);
-    $('#input').val('');
+    this.messageContent = null;
   }
 
 }

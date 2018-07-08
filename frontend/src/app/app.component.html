@@ -1,7 +1,11 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav>
     <mat-nav-list>
-      <a mat-list-item href="https://github.com/antilamer1709" target="_blank">
+      <a mat-list-item [routerLink]="'/chat'" (click)="sidenav.toggle()">
+        <mat-icon mat-list-icon>code</mat-icon>
+        <span mat-line>Chat</span>
+      </a>
+      <a mat-list-item href="https://github.com/antilamer1709" target="_blank" (click)="sidenav.toggle()">
         <mat-icon mat-list-icon>code</mat-icon>
         <span mat-line>Source Code</span>
       </a>
@@ -13,7 +17,7 @@
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Typescript Chat</span>
+      <span>Websocket application</span>
     </mat-toolbar>
 
     <div class="app-content">
