@@ -7,6 +7,7 @@ import { ChatComponent } from './chat/chat.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./app.routes";
 import {FormsModule} from "@angular/forms";
+import {AuthenticationModule} from "./authentication/authentication.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {FormsModule} from "@angular/forms";
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    AuthenticationModule,
     RouterModule.forRoot( routes, { useHash: true } )
   ],
   providers: [],
