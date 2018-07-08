@@ -5,7 +5,7 @@
   <mat-dialog-content>
     <mat-form-field>
       <input matInput name="username" placeholder="Username"
-             [(ngModel)]="params.username" (keyup.enter)="onLogIn()" [formControlName]="'username'" required>
+             [(ngModel)]="user.username" (keyup.enter)="onLogIn()" [formControlName]="'username'" required>
       <mat-error>This field is required</mat-error>
       <mat-hint>Please type your username</mat-hint>
     </mat-form-field>
@@ -14,7 +14,7 @@
   <mat-dialog-content>
     <mat-form-field>
       <input matInput name="password" placeholder="Password" type="password"
-             [(ngModel)]="params.password" (keyup.enter)="onLogIn()" [formControlName]="'password'" required>
+             [(ngModel)]="user.password" (keyup.enter)="onLogIn()" [formControlName]="'password'" required>
       <mat-error>This field is required</mat-error>
       <mat-hint>Please type your password</mat-hint>
     </mat-form-field>
@@ -22,8 +22,8 @@
 
 
   <mat-dialog-actions [attr.align]="'end'">
-    <button mat-button mat-dialog-close color="secondary">Close</button>
-    <button mat-raised-button color="primary" (click)="onLogIn()">Log in</button>
+    <button mat-button mat-dialog-close color="secondary" type="button">Close</button>
+    <button mat-raised-button color="primary" type="submit">Log in</button>
   </mat-dialog-actions>
 
 </form>
