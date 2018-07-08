@@ -11,8 +11,4 @@ export class AppService {
   constructor(private http: HttpClient) {
   }
 
-  test(): Observable<any> {
-    return this.http.get('/api/test');
-  }
-
 }
