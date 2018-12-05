@@ -20,7 +20,7 @@ export class ChatComponent implements OnInit {
   }
 
   private initializeWebSocketConnection(){
-    this.stompClient = this.socketService.connect(WsEndpoints.CHAT);
+    this.stompClient = this.socketService.connect(WsEndpoints.SOCKET);
 
     this.stompClient.connect({}, frame => {
       this.stompClient.subscribe('/chat', message => {
@@ -28,6 +28,9 @@ export class ChatComponent implements OnInit {
           this.messages.push(message.body);
           console.log(message.body);
         }
+      })
+      this.stompClient.subscribe('/userList', users => {
+        console.log(users);
       })
     });
   }
