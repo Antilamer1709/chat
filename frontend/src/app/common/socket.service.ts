@@ -6,7 +6,7 @@ import SockJS from 'sockjs-client';
 @Injectable({
   providedIn: 'root'
 })
-export class ChatService {
+export class SocketService {
 
   constructor() { }
 

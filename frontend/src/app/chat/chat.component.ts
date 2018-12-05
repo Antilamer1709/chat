@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ChatService} from "./chat.service";
+import {SocketService} from "../common/socket.service";
 
 @Component({
   selector: 'app-chat',
@@ -12,14 +12,14 @@ export class ChatComponent implements OnInit {
   public messageContent: string;
   private stompClient;
 
-  constructor(private chatService: ChatService) { }
+  constructor(private socketService: SocketService) { }
 
   ngOnInit() {
     this.initializeWebSocketConnection();
   }
 
   private initializeWebSocketConnection(){
-    this.stompClient = this.chatService.connect();
+    this.stompClient = this.socketService.connect();
 
     this.stompClient.connect({}, frame => {
       this.stompClient.subscribe('/chat', message => {
