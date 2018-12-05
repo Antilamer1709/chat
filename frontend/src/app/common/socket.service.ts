@@ -2,20 +2,21 @@ import { Injectable } from '@angular/core';
 
 import { Stomp} from 'stompjs/lib/stomp.js';
 import SockJS from 'sockjs-client';
+import {WsEndpoints} from "./ws.endpoints";
 
 @Injectable({
   providedIn: 'root'
 })
 export class SocketService {
 
+  private serverPrefix: string = 'http://localhost:8080/';
+
   constructor() { }
 
-  connect() {
-    let socket = new SockJS('http://localhost:8080/socket');
+  connect(endpoint: WsEndpoints) {
+    let socket = new SockJS(this.serverPrefix + endpoint);
 
-    let stompClient = Stomp.over(socket);
-
-    return stompClient;
+    return Stomp.over(socket);
   }
 
 }

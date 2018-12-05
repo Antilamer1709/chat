@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject.configuration;
+package com.antilamer.WebSocketProject.configuration.webSocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -12,7 +12,7 @@ public class WebSocketConfiguration extends AbstractWebSocketMessageBrokerConfig
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry stompEndpointRegistry) {
-        stompEndpointRegistry.addEndpoint("/socket")
+        stompEndpointRegistry.addEndpoint("/chat")
                 .setAllowedOrigins("*")
                 .withSockJS();
     }

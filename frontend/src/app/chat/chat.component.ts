@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SocketService} from "../common/socket.service";
+import {WsEndpoints} from "../common/ws.endpoints";
 
 @Component({
   selector: 'app-chat',
@@ -19,7 +20,7 @@ export class ChatComponent implements OnInit {
   }
 
   private initializeWebSocketConnection(){
-    this.stompClient = this.socketService.connect();
+    this.stompClient = this.socketService.connect(WsEndpoints.CHAT);
 
     this.stompClient.connect({}, frame => {
       this.stompClient.subscribe('/chat', message => {
