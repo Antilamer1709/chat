@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AppService} from "./app.service";
 import {AuthenticationService} from "./authentication/authentication.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import {AuthenticationService} from "./authentication/authentication.service";
 export class AppComponent implements OnInit {
 
   constructor(private appService: AppService,
+              private router: Router,
               public authenticationService: AuthenticationService) {
   }
 
@@ -22,7 +24,11 @@ export class AppComponent implements OnInit {
       res => {
         console.log("loggedUser: ");
         console.log(res);
-        this.authenticationService.loggedUser = res;
+        if (res) {
+          this.authenticationService.loggedUser = res;
+        } else {
+          this.router.navigate(['/login']);
+        }
       }
     );
   }
