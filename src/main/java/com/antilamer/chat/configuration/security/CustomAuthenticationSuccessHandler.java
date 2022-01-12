@@ -1,7 +1,7 @@
-package com.antilamer.WebSocketProject.configuration.security;
+package com.antilamer.chat.configuration.security;
 
-import com.antilamer.WebSocketProject.model.UserDTO;
-import com.antilamer.WebSocketProject.service.AuthenticationService;
+import com.antilamer.chat.model.UserDTO;
+import com.antilamer.chat.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;

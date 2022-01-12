@@ -1,7 +1,7 @@
-package com.antilamer.WebSocketProject.controller;
+package com.antilamer.chat.controller;
 
-import com.antilamer.WebSocketProject.model.UserDTO;
-import com.antilamer.WebSocketProject.service.AuthenticationService;
+import com.antilamer.chat.model.UserDTO;
+import com.antilamer.chat.service.AuthenticationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

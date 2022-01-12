@@ -1,11 +1,10 @@
-package com.antilamer.WebSocketProject.model;
+package com.antilamer.chat.model;
 
 import lombok.Data;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.security.Principal;
 import java.util.Collection;
 
 @Data

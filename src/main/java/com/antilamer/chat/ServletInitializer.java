@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject;
+package com.antilamer.chat;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;

@@ -1,6 +1,6 @@
-package com.antilamer.WebSocketProject.controller;
+package com.antilamer.chat.controller;
 
-import com.antilamer.WebSocketProject.model.ChatMessageDTO;
+import com.antilamer.chat.model.ChatMessageDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.simp.SimpMessageHeaderAccessor;

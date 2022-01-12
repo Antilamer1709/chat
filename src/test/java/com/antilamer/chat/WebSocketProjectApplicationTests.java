@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject;
+package com.antilamer.chat;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

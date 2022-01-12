@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject.configuration.security;
+package com.antilamer.chat.configuration.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

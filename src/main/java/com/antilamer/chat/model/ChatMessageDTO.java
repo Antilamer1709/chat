@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject.model;
+package com.antilamer.chat.model;
 
 import java.security.Principal;
 import java.text.SimpleDateFormat;

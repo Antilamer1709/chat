@@ -1,6 +1,6 @@
-package com.antilamer.WebSocketProject.listeners;
+package com.antilamer.chat.listeners;
 
-import com.antilamer.WebSocketProject.service.UserService;
+import com.antilamer.chat.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;

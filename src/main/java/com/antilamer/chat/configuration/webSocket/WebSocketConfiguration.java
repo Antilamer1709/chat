@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject.configuration.webSocket;
+package com.antilamer.chat.configuration.webSocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;

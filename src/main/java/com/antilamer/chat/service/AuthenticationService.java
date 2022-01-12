@@ -1,6 +1,6 @@
-package com.antilamer.WebSocketProject.service;
+package com.antilamer.chat.service;
 
-import com.antilamer.WebSocketProject.model.UserDTO;
+import com.antilamer.chat.model.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

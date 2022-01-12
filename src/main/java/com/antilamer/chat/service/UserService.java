@@ -1,6 +1,6 @@
-package com.antilamer.WebSocketProject.service;
+package com.antilamer.chat.service;
 
-import com.antilamer.WebSocketProject.model.UserDTO;
+import com.antilamer.chat.model.UserDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

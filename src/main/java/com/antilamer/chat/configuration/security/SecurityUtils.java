@@ -1,4 +1,4 @@
-package com.antilamer.WebSocketProject.configuration.security;
+package com.antilamer.chat.configuration.security;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
