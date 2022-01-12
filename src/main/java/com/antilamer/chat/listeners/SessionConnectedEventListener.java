@@ -12,7 +12,7 @@ import org.springframework.web.socket.messaging.SessionConnectedEvent;
 
 @Slf4j
 @Component
-public class SessionConnectedEventListener implements ApplicationListener<SessionConnectedEvent>  {
+public class SessionConnectedEventListener implements ApplicationListener<SessionConnectedEvent> {
 
     @Autowired
     private SimpMessagingTemplate template;

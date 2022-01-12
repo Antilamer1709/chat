@@ -31,7 +31,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 antMatchers("/node_modules/**").
                 antMatchers("/**/*.{js,html,css}");
 
-        web.ignoring().antMatchers( "/", "/resources/**", "/index.*", "/login.html","/favicon.ico",
+        web.ignoring().antMatchers("/", "/resources/**", "/index.*", "/login.html", "/favicon.ico",
                 "/template/**", "/assets", "/assets/**", "/node_modules", "/node_modules/**", "/dist", "/dist/**",
                 "/*.ttf", "/*.woff2", "/login", "/registration");
     }
@@ -65,6 +65,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .inMemoryAuthentication()
                 .withUser("user1").password("user1").roles("USER").and()
                 .withUser("user2").password("user2").roles("USER").and()
-                .withUser("user3").password("user3").roles("ADMIN","USER");
+                .withUser("user3").password("user3").roles("ADMIN", "USER");
     }
 }

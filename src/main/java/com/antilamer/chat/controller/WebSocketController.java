@@ -13,13 +13,13 @@ public class WebSocketController {
     private final SimpMessagingTemplate template;
 
     @Autowired
-    WebSocketController(SimpMessagingTemplate template){
+    public WebSocketController(SimpMessagingTemplate template) {
         this.template = template;
     }
 
     @MessageMapping("/send/message")
-    public void onReceivedMessage(SimpMessageHeaderAccessor headerAccessor, String message){
+    public void onReceivedMessage(SimpMessageHeaderAccessor headerAccessor, String message) {
         ChatMessageDTO messageDTO = new ChatMessageDTO(headerAccessor.getUser(), message);
-        this.template.convertAndSend("/chat",  messageDTO.toString());
+        this.template.convertAndSend("/chat", messageDTO.toString());
     }
 }
