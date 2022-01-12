@@ -6,7 +6,7 @@ export const routes: Routes = [
 
   ...AuthenticationRoutes,
   {
-    path: 'chat', component: ChatComponent
+    path: '', component: ChatComponent
   },
   { path: '**',
     redirectTo: '/'
