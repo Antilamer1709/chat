@@ -1,4 +1,4 @@
-package com.antilamer.chat.configuration.webSocket;
+package com.antilamer.chat.configuration.websocket;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
@@ -22,5 +22,4 @@ public class WebSocketConfiguration extends AbstractWebSocketMessageBrokerConfig
         registry.enableSimpleBroker("/chat", "/userList");
         registry.setApplicationDestinationPrefixes("/app");
     }
-
 }

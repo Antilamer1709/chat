@@ -18,9 +18,8 @@ public class WebSocketController {
     }
 
     @MessageMapping("/send/message")
-    public void onReceivedMesage(SimpMessageHeaderAccessor headerAccessor, String message){
+    public void onReceivedMessage(SimpMessageHeaderAccessor headerAccessor, String message){
         ChatMessageDTO messageDTO = new ChatMessageDTO(headerAccessor.getUser(), message);
         this.template.convertAndSend("/chat",  messageDTO.toString());
     }
-
 }

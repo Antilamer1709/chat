@@ -19,5 +19,4 @@ public class AuthenticationController {
         log.debug("*** loggedUser()");
         return authenticationService.getLoggedUserDTO();
     }
-
 }

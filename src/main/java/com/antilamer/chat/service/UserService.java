@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private List<UserDTO> connectedUsers = new ArrayList<>();
+    private final List<UserDTO> connectedUsers = new ArrayList<>();
 
 
     public void addConnectedUser(UserDTO user) {

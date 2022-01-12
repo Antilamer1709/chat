@@ -6,9 +6,8 @@ import java.util.Date;
 
 public class ChatMessageDTO {
 
-    private Principal user;
-
-    private String message;
+    private final String message;
+    private final Principal user;
 
     public ChatMessageDTO(Principal user, String message) {
         this.user = user;
@@ -17,14 +16,10 @@ public class ChatMessageDTO {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-
-        sb.append(new SimpleDateFormat("HH:mm:ss").format(new Date()));
-        sb.append(" ");
-        sb.append(this.user.getName());
-        sb.append(" - ");
-        sb.append(this.message);
-
-        return sb.toString();
+        return new SimpleDateFormat("HH:mm:ss").format(new Date()) +
+                " " +
+                this.user.getName() +
+                " - " +
+                this.message;
     }
 }

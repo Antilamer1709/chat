@@ -24,5 +24,4 @@ public class SessionDisconnectedEventListener implements ApplicationListener<Ses
         template.convertAndSend("/chat", event.getUser().getName() + " - has been disconnected!");
         template.convertAndSend("/userList", userService.getConnectedUsers());
     }
-
 }

@@ -11,16 +11,9 @@ import java.util.Collection;
 public class UserDTO {
 
     private Integer id;
-
     private String username;
-
     private String password;
-
     private Collection<? extends GrantedAuthority> authorities;
-
-
-    public UserDTO() {
-    }
 
     public UserDTO(UserDetails userDetails) {
         this.username = userDetails.getUsername();
